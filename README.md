@@ -1,43 +1,19 @@
-# SpringBoot
-MySpringbootDemo
+# Spring Boot Integration Examples
 
+[简体中文](README.zh-CN.md)
 
-   使用代码前一般都要匹配数据库，有服务器的IP地址，如果导入失败的可以用自
-己的代码，只是希望自己的代码能帮助需要的人，给大家一个基础学习小小帮助~
+Java 8 projects for learning Spring Boot 2.3 through small integrations. Each example has its own Maven project and focuses on one dependency or workflow.
 
+| Example | What it covers |
+| --- | --- |
+| [Redis](springboot_01_web_redis) | Read from the cache before querying the database. |
+| [Tasks and email](springboot_02_web_Async_email_time) | Synchronous, asynchronous, and scheduled tasks, with an email example. |
+| [RabbitMQ](springboot_03_web_rabbitMQ) | Message routing through exchanges, bindings, and queues. |
+| [Elasticsearch](springboot_04_web_elasticsearch) | Index and document operations, bulk requests, and a Tmall search example. The original notes flag limited Chinese search quality and unverified highlighting. |
+| [ZooKeeper and Dubbo](springboot_05_web_zookeeper_dubbo) | A provider and consumer using the same service registry. |
+| [MyBatis and Redis](springboot_06_web_mybatis) | Caching and two pagination approaches, SQL `LIMIT` and PageHelper. |
+| [Alibaba Cloud SMS](springboot_07_web_AliyunDysms) | Verification codes for sign-in and registration. |
+| [Blog](Springboot_Blog/VindaBlog) | A small blog built while following a [Bilibili tutorial](Springboot_Blog/加油.md). |
+| [Layui admin example](springboot_layui) | Employee and department management. |
 
-springboot_blog: 参考B站Up主做的一个小博客程序
-
-springboot_01_web_redis：
-	整合了redis，查询时候会先从缓存中获取数据，使用时候先修改相关数据库信息
-	
-springboot_02_web_Async_email_time：
-	整合了同步、异步、定时任务，使用邮箱发送的案例，在使用该代码前涉及到邮箱
-填写的地方需要手动修改，本人修改了代码提示...一定要改完对应的发送邮件信息
-
-springboot_03_web_rabbitMQ：
-	整合了rabbitMQ消息队列，在使用该代码前，要知道消息队列的操作顺序，怎么在
-服务器中通过交换器、通过绑定条件获得对应的消息队列信息，用前注意修改rabbitMQ
-的服务器端口，用户名以及密码（默认是guest，5672）
-
-springboot_04_web_elasticsearch：
-	整合了elasticsearch的简单使用，实现索引的添加删除，文档的增删改查，大量查
-询，大量插入，带有注释，看起来不难，就是不太完善，在ElasticSearchClientConfig
-类中修改服务器IP。 已经添加天猫的搜索记录添加（中文效果不佳），高亮显示（尚未测试）
-
-
-springboot_05_web_zookeeper_dubbo：
-	整合了zookeeper和dubbo，在application.properties文件中对应应用名称，启动端
-口号，以及同样的注册中心（zookeeper）地址。
-
-springboot_06_web_mybatis：
-	整合了mybatis、redis缓存，没事做个分页来着，有使用limit做分页，也有pagehelper
-做的分页，可以拿去看看，忘记修改了啥，反正启动前记得导入sql文件，做对应的数据库，
-修改IP地址。
-
-springboot_07_web_AliyunDysms：
-	整合了阿里云服务器的短信服务，可以通过服务器向用户发送验证码起到登录验证、注册验证
-功能，使用前记得修改对应的模板code，标签，手机号码的等相关信息，如需使用redis记得修改对应的
-redis服务器地址，并且打开redis服务器服务。
-
-
+Open the selected module's `pom.xml` as a Maven project. Update the service endpoints in its application configuration before running it. For the Elasticsearch example, also check `ElasticSearchClientConfig`. Use your own SMTP, RabbitMQ, or SMS settings where applicable, and load the matching schema before starting a database-backed example.
