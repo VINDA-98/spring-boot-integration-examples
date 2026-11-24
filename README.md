@@ -2,7 +2,7 @@
 
 [简体中文](README.zh-CN.md)
 
-Java 8 projects for learning Spring Boot 2.3 through small integrations. Each example has its own Maven project and focuses on one dependency or workflow.
+Independent Java 8 Maven projects for Spring Boot 2.3 integrations. Each module isolates a workflow, from cache reads and message routing to search, scheduled tasks and database pagination.
 
 | Example | What it covers |
 | --- | --- |
